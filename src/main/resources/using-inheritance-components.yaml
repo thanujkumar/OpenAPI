@@ -1,0 +1,20 @@
+openapi: 3.0.2
+info:
+  version: '0.9'
+  title: 'Open API Examples'
+  description: 'Provides how to use OAS 3.0'
+  termsOfService: http://example.org/terms
+  contact:
+    name: thanuj kumar
+    email: thanuj_tk@yahoo.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: http://dev.localhost:8088/openapi
+    description: Local Dev Server
+  - url: http://qa.localhost:8088/openapi
+    description: Local QA Server
+  - url: http://prod.localhost:8088/openapi
+    description: Local Prod Server
+paths: {}

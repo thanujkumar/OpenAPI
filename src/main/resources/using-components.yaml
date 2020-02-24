@@ -17,4 +17,73 @@ servers:
     description: Local QA Server
   - url: http://prod.localhost:8088/openapi
     description: Local Prod Server
-paths: {}
+paths:
+  /v1/customers:
+    get:
+      responses:
+        '200':
+          description: List Of Customers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerList'
+
+components:
+  schemas:
+    Address:
+      type: object
+      properties:
+        line1:
+          type: string
+          example: '#27, 3rd Cross Shirdi Sai Nagar'
+        line2:
+          type: string
+          example: K Narayanapura Main Road
+        city:
+          type: string
+          example: Bangalore
+        stateCode:
+          type: string
+          minLength: 2
+          maxLength: 2
+          #enum: [KA, MH, KL, TN, GA, DL] #Another way as array as in yaml
+          enum:
+            - KA
+            - MH
+            - KL
+            - TN
+            - GA
+            - DL
+          example: KA
+        zipCode:
+          type: string
+          example: 560077
+
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        firstName:
+          type: string
+          minLength: 2
+          maxLength: 50
+          description: First name of customer
+          example: Thanuj
+        lastName:
+          type: string
+          minLength: 2
+          maxLength: 50
+          description: Last name of customer
+          example: Kumar
+        address:
+          $ref: '#/components/schemas/Address'
+
+    CustomerList:
+      type: array
+      minItems: 1
+      maxItems: 100
+      description: List of customer
+      items:
+        $ref: '#/components/schemas/Customer'
