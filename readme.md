@@ -9,3 +9,7 @@ git config --global credential.helper 'cache --timeout 7200'
 [Json Schema](https://json-schema.org/specification.html)
 
 [Open API map](http://openapi-map.apihandyman.io/)
+
+
+Free Intellij Plugin for OpenAPI
+SenyaEditor
