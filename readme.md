@@ -1,4 +1,4 @@
-No progress :worried:
+No progress :worried: :beers:
 
 git config credential.helper store
 
